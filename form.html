@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.9.5/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.9.5/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.9.5/demo/demo.css">
+<link href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.common.min.css" rel="stylesheet" />
+<link href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.default.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css">
+
+<script type="text/javascript" src="jquery-easyui-1.9.5/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.9.5/jquery.easyui.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2020.2.513/js/kendo.all.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+	<h2 style="color: #F3F7FA"> Spider CHB</h2>
+	<a class="active" href="#home"> <i class="fa fa-home nav_icon" aria-hidden="true"></i> Home</a>
+	<a href="#news"> <i class="fa fa-users nav_icon"></i> Users</a>
+	<a href="#contact"> <i class="fa fa-envelope nav_icon"></i> Contact</a>
+	<a href="#about"> <i class="fa fa-user-circle-o nav_icon"></i> About</a>
+</div>
+<header class="header">
+   <div class="right-header-section">
+	   <div class="r_submenu active">
+			<a href="#">Dashboard</a>
+		</div>
+		<div class="r_submenu">
+			<a href="#">Help</a>
+		</div>
+    <img src="image/gavatar.png" alt="">
+   </div>
+</header>
+<div class="content">
+	<div class="add_btn_div">
+		<button class="button add_btn" id="add_btn1"><i class="fa fa-plus save_icon"></i> &nbsp;&nbsp;Add</button>
+		<button class="button add_btn" id="add_btn2"><i class="fa fa-plus save_icon"></i> &nbsp;&nbsp;Add</button>
+		<button class="button add_btn" id="add_btn3"><i class="fa fa-plus save_icon"></i> &nbsp;&nbsp;Add</button>
+	</div>
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+		<div class="modal-header">
+			<span class="close">&times;</span>
+			<h2>Modal Header</h2>
+		</div>
+		<div class="modal-body">
+			<p>Some text in the Modal Body</p>
+			<p>Some other text...</p>
+		</div>
+		<div class="modal-footer">
+			<h3>Modal Footer</h3>
+		</div>
+		</div>
+	
+	</div>
+
+	<div class="isfentry_header">
+		<h3>ISF Entry</h3>
+	</div>
+	<form id="ff">
+	<div class="reference">
+		<div class="first-subsection">
+			<div class="left-section">
+				<div class="reference_section">
+					<div style="margin-bottom:5px; width: 35%;">
+						<input class="easyui-textbox" label="Reference No." labelPosition="top" data-options="validType:'text'" style="width: 80%;">
+					</div>
+
+					<div style="margin-bottom:5px; width: 35%;">
+						<select class="easyui-combobox" name="ISOType" label="ISO Type" labelPosition="top" style="width: 80%;">
+							<option value="AL">ISF-10</option>
+							<option value="AK">ISF-11</option>
+							<option value="AZ">ISF-12</option>
+						</select>
+					</div>
+					
+					<div style="margin-bottom:5px; width: 35%;">
+						<select class="easyui-combobox" name="ShipmentType" label="Shipment Type" labelPosition="top" style="width: 80%;">
+							<option value="AL">01 - Standard or regular filings</option>
+							<option value="AK">Alaska</option>
+							<option value="AZ">Arizona</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="importer_section">
+					<div class="first-line">
+						<div class="importer" style="width: 100%;">
+							<div style="width: 100%; padding-bottom: 5px;">
+								<input class="easyui-textbox" label="Importer" labelPosition="top" data-options="validType:'text'" buttonText="Search" style="width: 80%;">
+							</div>
+							<div class="importer-radio" style="width: 80%; white-space: nowrap;">
+								<input class="easyui-radiobutton" name="profilename" value="profilename" checked label="Profile Name" labelPosition="after" style="padding-right: 30px;">
+								<input class="easyui-radiobutton" name="profilename" value="profilename" label="Company Name" labelPosition="after">
+							</div>
+	
+						</div>
+					</div>
+					<div class="second-line">
+						<div class="consignee" style="width: 100%;">
+							<div style="width: 100%; padding-bottom: 5px;">
+								<input class="easyui-textbox" label="Conignee" labelPosition="top" data-options="validType:'text'"  buttonText="Search" style="width: 80%;">
+							</div>
+							<div class="importer-radio" style="width: 70%; white-space: nowrap;">
+								<input class="easyui-radiobutton" name="companyname" value="profilename" checked label="Profile Name" labelPosition="after">
+								<input class="easyui-radiobutton" name="companyname" value="companyname" label="Company Name" labelPosition="after">
+							</div>
+	
+						</div>
+					</div>
+					<div class="third-line">
+						<div class="freight" style="width: 100%;">
+							<div style="width: 100%; padding-bottom: 5px;">
+								<input class="easyui-textbox" label="Freight Forwarder" labelPosition="top" data-options="validType:'text'"  buttonText="Search" style="width: 80%;">
+							</div>
+							<div class="importer-radio" style="width: 70%; white-space: nowrap;">
+								<input class="easyui-radiobutton" name="companyname_2" value="profilename" checked label="Profile Name" labelPosition="after">
+								<input class="easyui-radiobutton" name="companyname_2" value="companyname" label="Company Name" labelPosition="after">
+							</div>
+	
+						</div>
+					</div>
+				</div>
+
+				<div class="customer_section">
+					<div style="margin-bottom:5px; width: 35%;">
+						<input class="easyui-textbox" label="Customer Reference No." labelPosition="top" data-options="validType:'text'" style="width:80%;">
+					</div>
+			
+					<div style="margin-bottom:5px; width: 35%;">
+						<input class="easyui-textbox" label="Cust. Ref. No. Descriptor" labelPosition="top" data-options="validType:'text'" style="width:80%;">
+					</div>
+			
+					<div style="margin-bottom:5px; width: 35%;">
+						<input class="easyui-textbox" label="Booking Confirmation No." labelPosition="top" data-options="validType:'text'" style="width:80%;">
+					</div>
+				</div>
+			</div>
+
+			<div class="right-section">
+				<div class="first_line">
+					<div style="margin-bottom:5px; padding-right: 24px; width: 50%;">
+						<select class="easyui-combobox" name="ISFBondingPrty" label="ISF Bonding Party" labelPosition="top" style="width:100%;">
+							<option value="AL">Importer's Bond</option>
+							<option value="AK">Alaska</option>
+							<option value="AZ">Arizona</option>
+						</select>
+					</div>
+
+					<div style="padding-bottom: 5px; width: 50%;">
+						<select class="easyui-combobox" name="ISFBondType" label="ISF Bond Type" labelPosition="top" style="width:100%;">
+							<option value="AL">Continuous</option>
+							<option value="AK">Alaska</option>
+							<option value="AZ">Arizona</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="second_line">
+					<div style="margin-bottom:5px; padding-right: 24px; width: 50%;">
+						<input class="easyui-datebox" label="Etimated Departure Date (Optional)" labelPosition="top" style="width:100%;">
+					</div>
+					<div style="margin-bottom:5px; width: 50%;">
+						<input class="easyui-datebox" label="Etimated Arrival Date (Optional)" labelPosition="top" style="width:100%;">
+					</div>
+				</div>
+				
+				<div class="third_line">
+					<div style="margin-bottom:5px; margin-top: 20px; padding-right: 24px; width: 50%;">
+						<select class="easyui-combobox" name="TransactionType" label="Transaction Type" labelPosition="top" style="width:100%;">
+							<option value="AL">Compliant Transaction</option>
+							<option value="AK">Alaska</option>
+							<option value="AZ">Arizona</option>
+						</select>
+					</div>
+					
+					<div style="padding-bottom: 5px; margin-top: 20px; width: 50%;">
+						<input class="easyui-textbox" label="Additional Email Parties" labelPosition="top" data-options="validType:'text'" style="width:100%;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bill">
+		<h3 style="border-bottom: 1px solid #aaa; padding-bottom: 2px;">Bills of Lading</h3>
+		<div class="bill_body" style="display: flex; flex-direction: row;">
+			<div class="first_section">
+				<div style="margin-bottom:5px; width: 100%;  padding-right: 16px; ">
+					<input class="easyui-textbox" label="Carrier" labelPosition="top" data-options="validType:'text'"  style="width: 80%;">
+				</div>
+				<div style="margin-bottom:5px; width: 100%;  padding-right: 16px; ">
+					<select class="easyui-combobox" name="ISFBondingParty" label="Model of Transportation" labelPosition="top" style="width:80%;">
+						<option value="AL">Vessel, Container</option>
+						<option value="AK">Alaska</option>
+						<option value="AZ">Arizona</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="second_section">
+				<div style="margin-bottom:5px; width: 100%;  padding-right: 16px; ">
+					<input class="easyui-textbox" label="Master SCAC" labelPosition="top" data-options="validType:'text'" style="width: 80%;"> 
+				</div>
+				<div style="margin-bottom:5px; width: 100%;  padding-right: 16px; ">
+					<input class="easyui-textbox" label="Master Bill" labelPosition="top" data-options="validType:'text'" style="width: 80%;"> 
+				</div>
+			</div>
+
+			<div class="third_section">
+				<div style="display: flex; flex-direction: row; width: 100%;">
+					<div style="margin-bottom:5px; width: 40%;">
+						<select class="easyui-combobox" name="ISFBondingPrty" label="Bill Number Type" labelPosition="top" style="width:80%;">
+							<option value="AL">House Bill</option>
+							<option value="AK">Alaska</option>
+							<option value="AZ">Arizona</option>
+						</select>
+					</div>
+					<div style="width: 20%; padding-bottom: 5px;">
+						<input class="easyui-textbox" label="SCAC" labelPosition="top" data-options="validType:'text'" style="width: 80%;"> 
+					</div>
+					<div style="width: 40%; padding-bottom: 5px;">
+						<input class="easyui-textbox" label="Bill Number" labelPosition="top" data-options="validType:'text'" style="width: 80%;"> 
+					</div>
+				</div>
+
+				<div style="display: flex; flex-direction: row; width: 100%;">
+					<div style="width: 70%; padding-bottom: 5px;">
+						<input class="easyui-textbox" label="Bill on File" labelPosition="top" data-options="validType:'text'" style="width: 70%;"> 
+					</div>
+					<div class="add_address_btn_div" style="margin-bottom:5px; width: 30%;">
+						<button class="button add_address_btn"><i class="fa fa-plus add_icon"></i> Add Bill Number</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="selling_party">
+		<div class="sub_header" style="border-bottom: 1px solid #aaa; padding-bottom: 2px;">
+			<div style="width: 50%;"><h3>Selling Party</h3></div>
+			<div class="section_option">
+				<select class="easyui-combobox" name="copyfrom" label="Copy From:" labelPosition="left" style="width: 65%;">
+					<option value="AL"></option>
+					<option value="AK">ISF-11</option>
+				</select>
+				<div style="padding-left: 30px; margin-top: 4px; width: 35%;">
+					<button class="button clear_btn"><i class="fa fa-remove delete_icon"></i> &nbsp;&nbsp;Clear</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="name_section">
+			<div style="margin-bottom:5px; padding-right: 16px; width: 10%;">
+				<input class="easyui-textbox" label="MID" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+			</div>
+
+			<div style="margin-bottom:5px; padding-right: 16px; width: 30%;">
+				<input class="easyui-textbox" label="Name" labelPosition="top" data-options="validType:'text'" style="width: 100%;">
+			</div>
+
+			<div style="margin-bottom:5px; padding-right: 16px; width: 10%;">
+				<input class="easyui-textbox" label="DUNS/DUNS+4" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+			</div>
+
+			<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+				<select class="easyui-combobox" name="secondarynametype" label="Secondary Name Type" labelPosition="top" style="width: 100%;">
+					<option value="AL"></option>
+					<option value="AK">ISF-11</option>
+					<option value="AZ">ISF-12</option>
+				</select>
+			</div>
+			<div style="margin-bottom:5px; width: 25%;">
+				<input class="easyui-textbox" label="Secondary name" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+			</div>
+		</div>
+
+		<div class="address_section">
+			<div style="width: 50%;">
+				<div class="addresspart_one">
+					<div style="margin-bottom:5px; padding-right: 24px; width: 50%;">
+						<select class="easyui-combobox" name="addresspart1" label="Address Part 1" labelPosition="top"  style="width: 100%;">
+							<option value="AL">Unstructured Street Address</option>
+							<option value="AK">ISF-11</option>
+							<option value="AZ">ISF-12</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox" label=" " labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+					</div>
+				</div>
+
+				<div class="addresspart_two">
+					<div style="margin-bottom:5px; padding-right: 24px; width: 50%;">
+						<select class="easyui-combobox" name="addresspart2" label="Address Part 2" labelPosition="top" style="width: 100%;">
+							<option value="AL">Unstructured Street Address</option>
+							<option value="AK">ISF-11</option>
+							<option value="AZ">ISF-12</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox"  label=" " labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+			</div>
+
+			<div style="width: 50%;">
+				<div class="country_state">
+					<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+						<input class="easyui-textbox" label="Country" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+					
+					<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+						<input class="easyui-textbox" label="Postal Code" labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+					</div>
+
+					<div style="margin-bottom:5px; width: 35%;">
+						<input class="easyui-textbox" label="Email:" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+
+				<div class="city_postal">
+					<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+						<input class="easyui-textbox" label="City" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+
+					<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+						<input class="easyui-textbox" label="State/Province" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+
+					<div class="add_address_btn_div" style="margin-bottom:5px; width: 30%;">
+						<button class="button add_address_btn"><i class="fa fa-plus add_icon"></i> Add Address Part</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="buying_party">
+		<div class="sub_header" style="border-bottom: 1px solid #aaa; padding-bottom: 2px;">
+			<div style="width: 50%;"><h3>Buying Party</h3></div>
+			<div class="section_option">
+				<select class="easyui-combobox" name="copyfrom" label="Copy From:" labelPosition="left" style="width: 65%;">
+					<option value="AL"></option>
+					<option value="AK">ISF-11</option>
+				</select>
+				<div style="padding-left: 30px; margin-top: 4px; width: 35%;">
+					<button class="button clear_btn"><i class="fa fa-remove delete_icon"></i> &nbsp;&nbsp;Clear</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="name_section">
+			<div style="margin-bottom:5px; padding-right: 16px; width: 30%;">
+				<input class="easyui-textbox" label="Name" labelPosition="top" data-options="validType:'text'" style="width: 100%;">
+			</div>
+			<div style="margin-bottom:5px; padding-right: 16px; width: 10%;">
+				<input class="easyui-textbox" label="DUNS/DUNS+4" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+			</div>
+
+			<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+				<select class="easyui-combobox" name="secondarynametype" label="Secondary Name Type" labelPosition="top" style="width: 100%;">
+					<option value="AL"></option>
+					<option value="AK">ISF-11</option>
+					<option value="AZ">ISF-12</option>
+				</select>
+			</div>
+			<div style="margin-bottom:5px; width: 25%;">
+				<input class="easyui-textbox" label="Secondary name" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+			</div>
+		</div>
+
+		<div class="address_section">
+			<div style="width: 50%;">
+				<div class="addresspart_one">
+					<div style="margin-bottom:5px; margin-right: 24px; width: 50%;">
+						<select class="easyui-combobox" name="addresspart1" label="Address Part 1" labelPosition="top"  style="width: 100%;">
+							<option value="AL">Unstructured Street Address</option>
+							<option value="AK">ISF-11</option>
+							<option value="AZ">ISF-12</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox" label=" " labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+					</div>
+				</div>
+
+				<div class="addresspart_two">
+					<div style="margin-bottom:5px; margin-right: 24px; width: 50%;">
+						<select class="easyui-combobox" name="addresspart2" label="Address Part 2" labelPosition="top" style="width: 100%;">
+							<option value="AL">Unstructured Street Address</option>
+							<option value="AK">ISF-11</option>
+							<option value="AZ">ISF-12</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox"  label=" " labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+			</div>
+
+			<div style="width: 50%;">
+				<div class="country_state">
+					<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+						<input class="easyui-textbox" label="Country" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+					
+					<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+						<input class="easyui-textbox" label="Postal Code" labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+					</div>
+
+					<div style="margin-bottom:5px; width: 30%;">
+						<input class="easyui-textbox" label="Email:" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+
+				<div class="city_postal">
+					<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+						<input class="easyui-textbox" label="City" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+
+					<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+						<input class="easyui-textbox" label="State/Province" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+
+					<div class="add_address_btn_div" style="margin-bottom:5px; width: 30%;">
+						<button class="button add_address_btn"><i class="fa fa-plus add_icon"></i> Add Address Part</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="ship_to_party">
+		<div class="sub_header" style="border-bottom: 1px solid #aaa; padding-bottom: 2px;">
+			<div style="width: 50%;"><h3>Ship to Party</h3></div>
+			<div class="section_option">
+				<select class="easyui-combobox" name="copyfrom" label="Copy From:" labelPosition="left" style="width: 65%;">
+					<option value="AL"></option>
+					<option value="AK">ISF-11</option>
+				</select>
+				<div style="padding-left: 30px; margin-top: 4px; width: 35%;">
+					<button class="button clear_btn"><i class="fa fa-remove delete_icon"></i> &nbsp;&nbsp;Clear</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="name_section">
+			<div style="margin-bottom:5px; padding-right: 16px; width: 30%;">
+				<input class="easyui-textbox" label="Name" labelPosition="top" data-options="validType:'text'" style="width: 100%;">
+			</div>
+			<div style="margin-bottom:5px; padding-right: 16px; width: 10%;">
+				<input class="easyui-textbox" label="FIRMS Code or DUNS/DUNS+4" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+			</div>
+
+			<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+				<select class="easyui-combobox" name="secondarynametype" label="Secondary Name Type" labelPosition="top" style="width: 100%;">
+					<option value="AL"></option>
+					<option value="AK">ISF-11</option>
+					<option value="AZ">ISF-12</option>
+				</select>
+			</div>
+			<div style="margin-bottom:5px; width: 25%;">
+				<input class="easyui-textbox" label="Secondary name" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+			</div>
+		</div>
+
+		<div class="address_section">
+			<div style="width: 50%;">
+				<div class="addresspart_one">
+					<div style="margin-bottom:5px; margin-right: 24px; width: 50%;">
+						<select class="easyui-combobox" name="addresspart1" label="Address Part 1" labelPosition="top"  style="width: 100%;">
+							<option value="AL">Unstructured Street Address</option>
+							<option value="AK">ISF-11</option>
+							<option value="AZ">ISF-12</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox" label=" " labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+					</div>
+				</div>
+
+				<div class="addresspart_two">
+					<div style="margin-bottom:5px; margin-right: 24px; width: 50%;">
+						<select class="easyui-combobox" name="addresspart2" label="Address Part 2" labelPosition="top" style="width: 100%;">
+							<option value="AL">Unstructured Street Address</option>
+							<option value="AK">ISF-11</option>
+							<option value="AZ">ISF-12</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox"  label=" " labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+			</div>
+
+			<div style="width: 50%;">
+				<div class="country_state">
+					<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+						<input class="easyui-textbox" label="Country" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+					
+					<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+						<input class="easyui-textbox" label="Postal Code" labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+					</div>
+
+					<div style="margin-bottom:5px; width: 30%;">
+						<input class="easyui-textbox" label="Email:" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+
+				<div class="city_postal">
+					<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+						<input class="easyui-textbox" label="City" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+
+					<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+						<input class="easyui-textbox" label="State/Province" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+
+					<div class="add_address_btn_div" style="margin-bottom:5px; width: 30%;">
+						<button class="button add_address_btn"><i class="fa fa-plus add_icon"></i> Add Address Part</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="stuffing_location">
+		<div class="sub_header" style="border-bottom: 1px solid #aaa; padding-bottom: 2px;">
+			<div style="width: 50%;"><h3>Stuffing Location</h3></div>
+			<div class="section_option">
+				<select class="easyui-combobox" name="copyfrom" label="Copy From:" labelPosition="left" style="width: 65%;">
+					<option value="AL"></option>
+					<option value="AK">ISF-11</option>
+				</select>
+				<div style="padding-left: 30px; margin-top: 4px; width: 35%;">
+					<button class="button clear_btn"><i class="fa fa-remove delete_icon"></i> &nbsp;&nbsp;Clear</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="name_section">
+			<div style="margin-bottom:5px; padding-right: 16px; width: 30%;">
+				<input class="easyui-textbox" label="Name" labelPosition="top" data-options="validType:'text'" style="width: 100%;">
+			</div>
+			<div style="margin-bottom:5px; padding-right: 16px; width: 10%;">
+				<input class="easyui-textbox" label="DUNS/DUNS+4" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+			</div>
+
+			<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+				<select class="easyui-combobox" name="secondarynametype" label="Secondary Name Type" labelPosition="top" style="width: 100%;">
+					<option value="AL"></option>
+					<option value="AK">ISF-11</option>
+					<option value="AZ">ISF-12</option>
+				</select>
+			</div>
+			<div style="margin-bottom:5px; width: 25%;">
+				<input class="easyui-textbox" label="Secondary name" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+			</div>
+		</div>
+
+		<div class="address_section">
+			<div style="width: 50%;">
+				<div class="addresspart_one">
+					<div style="margin-bottom:5px; margin-right: 24px; width: 50%;">
+						<select class="easyui-combobox" name="addresspart1" label="Address Part 1" labelPosition="top"  style="width: 100%;">
+							<option value="AL">Unstructured Street Address</option>
+							<option value="AK">ISF-11</option>
+							<option value="AZ">ISF-12</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox" label=" " labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+					</div>
+				</div>
+
+				<div class="addresspart_two">
+					<div style="margin-bottom:5px; margin-right: 24px; width: 50%;">
+						<select class="easyui-combobox" name="addresspart2" label="Address Part 2" labelPosition="top" style="width: 100%;">
+							<option value="AL">Unstructured Street Address</option>
+							<option value="AK">ISF-11</option>
+							<option value="AZ">ISF-12</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox"  label=" " labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+			</div>
+
+			<div style="width: 50%;">
+				<div class="country_state">
+					<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+						<input class="easyui-textbox" label="Country" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+					
+					<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+						<input class="easyui-textbox" label="Postal Code" labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+					</div>
+
+					<div style="margin-bottom:5px; width: 30%;">
+						<input class="easyui-textbox" label="Email:" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+
+				<div class="city_postal">
+					<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+						<input class="easyui-textbox" label="City" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+
+					<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+						<input class="easyui-textbox" label="State/Province" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+
+					<div class="add_address_btn_div" style="margin-bottom:5px; width: 30%;">
+						<button class="button add_address_btn"><i class="fa fa-plus add_icon"></i> Add Address Part</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="consolidator">
+		<div class="sub_header" style="border-bottom: 1px solid #aaa; padding-bottom: 2px;">
+			<div style="width: 50%;"><h3>Consolidator</h3></div>
+			<div class="section_option">
+				<select class="easyui-combobox" name="copyfrom" label="Copy From:" labelPosition="left" style="width: 65%;">
+					<option value="AL"></option>
+					<option value="AK">ISF-11</option>
+				</select>
+				<div style="padding-left: 30px; margin-top: 4px; width: 35%;">
+					<button class="button clear_btn"><i class="fa fa-remove delete_icon"></i> &nbsp;&nbsp;Clear</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="name_section">
+			<div style="margin-bottom:5px; padding-right: 16px; width: 30%;">
+				<input class="easyui-textbox" label="Name" labelPosition="top" data-options="validType:'text'" style="width: 100%;">
+			</div>
+			<div style="margin-bottom:5px; padding-right: 16px; width: 10%;">
+				<input class="easyui-textbox" label="DUNS/DUNS+4" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+			</div>
+
+			<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+				<select class="easyui-combobox" name="secondarynametype" label="Secondary Name Type" labelPosition="top" style="width: 100%;">
+					<option value="AL"></option>
+					<option value="AK">ISF-11</option>
+					<option value="AZ">ISF-12</option>
+				</select>
+			</div>
+			<div style="margin-bottom:5px; width: 25%;">
+				<input class="easyui-textbox" label="Secondary name" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+			</div>
+		</div>
+
+		<div class="address_section">
+			<div style="width: 50%;">
+				<div class="addresspart_one">
+					<div style="margin-bottom:5px; margin-right: 24px; width: 50%;">
+						<select class="easyui-combobox" name="addresspart1" label="Address Part 1" labelPosition="top"  style="width: 100%;">
+							<option value="AL">Unstructured Street Address</option>
+							<option value="AK">ISF-11</option>
+							<option value="AZ">ISF-12</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox" label=" " labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+					</div>
+				</div>
+
+				<div class="addresspart_two">
+					<div style="margin-bottom:5px; margin-right: 24px; width: 50%;">
+						<select class="easyui-combobox" name="addresspart2" label="Address Part 2" labelPosition="top" style="width: 100%;">
+							<option value="AL">Unstructured Street Address</option>
+							<option value="AK">ISF-11</option>
+							<option value="AZ">ISF-12</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox"  label=" " labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+			</div>
+
+			<div style="width: 50%;">
+				<div class="country_state">
+					<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+						<input class="easyui-textbox" label="Country" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+					
+					<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+						<input class="easyui-textbox" label="Postal Code" labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+					</div>
+
+					<div style="margin-bottom:5px; width: 30%;">
+						<input class="easyui-textbox" label="Email:" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+
+				<div class="city_postal">
+					<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+						<input class="easyui-textbox" label="City" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+
+					<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+						<input class="easyui-textbox" label="State/Province" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+
+					<div class="add_address_btn_div" style="margin-bottom:5px; width: 30%;">
+						<button class="button add_address_btn" style="white-space:nowrap;"><i class="fa fa-plus add_icon"></i> Add Address Part</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="manufacturers">
+		<div class="manufacturers_header">
+			<div style="width: 50%;"><h3>Manufacturers</h3></div>
+			<div class="section_option">
+				<select class="easyui-combobox" name="copyfrom" label="Copy From:" labelPosition="left" style="width: 45%;">
+					<option value="AL"></option>
+					<option value="AK">ISF-11</option>
+				</select>
+				<div style="padding-left: 24px; margin-top: 4px; width: 30%;">
+					<button class="button clear_btn"><i class="fa fa-plus delete_icon"></i> &nbsp;&nbsp;Add Manufacturer</button>
+				</div>
+				<div style="padding-left: 8px; margin-top: 4px; width: 25%;">
+					<button class="button clear_btn"><i class="fa fa-remove delete_icon"></i> &nbsp;&nbsp;Clear</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="manufacturers_content">
+			<div class="name_section">
+				<div style="margin-bottom:5px; padding-right: 16px; width: 10%;">
+					<input class="easyui-textbox" label="MID" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+				</div>
+
+				<div style="margin-bottom:5px; padding-right: 16px; width: 30%;">
+					<input class="easyui-textbox" label="Name" labelPosition="top" data-options="validType:'text'" style="width: 100%;">
+				</div>
+
+				<div style="margin-bottom:5px; padding-right: 16px; width: 10%;">
+					<input class="easyui-textbox" label="DUNS/DUNS+4" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+				</div>
+	
+				<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+					<select class="easyui-combobox" name="secondarynametype" label="Secondary Name Type" labelPosition="top" style="width: 100%;">
+						<option value="AL"></option>
+						<option value="AK">ISF-11</option>
+						<option value="AZ">ISF-12</option>
+					</select>
+				</div>
+				<div style="margin-bottom:5px; width: 25%;">
+					<input class="easyui-textbox" label="Secondary name" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+				</div>
+			</div>
+			<div class="address_section">
+				<div style="width: 50%;">
+					<div class="addresspart_one">
+						<div style="margin-bottom:5px; margin-right: 24px; width: 50%;">
+							<select class="easyui-combobox" name="addresspart1" label="Address Part 1" labelPosition="top"  style="width: 100%;">
+								<option value="AL">Unstructured Street Address</option>
+								<option value="AK">ISF-11</option>
+								<option value="AZ">ISF-12</option>
+							</select>
+						</div>
+						<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+							<input class="easyui-textbox" label=" " labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+						</div>
+					</div>
+	
+					<div class="addresspart_two">
+						<div style="margin-bottom:5px; margin-right: 24px; width: 50%;">
+							<select class="easyui-combobox" name="addresspart2" label="Address Part 2" labelPosition="top" style="width: 100%;">
+								<option value="AL">Unstructured Street Address</option>
+								<option value="AK">ISF-11</option>
+								<option value="AZ">ISF-12</option>
+							</select>
+						</div>
+						<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+							<input class="easyui-textbox"  label=" " labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+						</div>
+					</div>
+				</div>
+	
+				<div style="width: 50%;">
+					<div class="country_state">
+						<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+							<input class="easyui-textbox" label="Country" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+						</div>
+						
+						<div style="margin-bottom:5px; width: 25%;">
+							<input class="easyui-textbox" label="Postal Code" labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+						</div>
+	
+						<div style="margin-bottom:5px;width: 30%;">
+							<!-- <input class="easyui-textbox" label="Email:" labelPosition="top" data-options="validType:'text'"  style="width: 100%;"> -->
+						</div>
+					</div>
+	
+					<div class="city_postal">
+						<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+							<input class="easyui-textbox" label="City" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+						</div>
+	
+						<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+							<input class="easyui-textbox" label="State/Province" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+						</div>
+	
+						<div class="add_address_btn_div" style="margin-bottom:5px; width: 30%;">
+							<button class="button add_address_btn"><i class="fa fa-plus add_icon"></i> Add Address Part</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="kendo_grid_section">
+				<div id="grid">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="manufacturers">
+		<div class="manufacturers_header">
+			<div style="width: 50%;"><h3>Additional Entities</h3></div>
+			<div class="section_option">
+				<select class="easyui-combobox" name="copyfrom" label="Copy From:" labelPosition="left" style="width: 40%;">
+					<option value="AL"></option>
+					<option value="AK">ISF-11</option>
+				</select>
+				<div style="padding-left: 24px; margin-top: 4px; width: 35%;">
+					<button class="button clear_btn"><i class="fa fa-plus delete_icon"></i> &nbsp;&nbsp;Add Entity</button>
+				</div>
+				<div style="padding-left: 8px; margin-top: 4px; width: 25%;">
+					<button class="button clear_btn"><i class="fa fa-remove delete_icon"></i> &nbsp;&nbsp;Clear</button>
+				</div>
+			</div>
+		</div>
+		<div class="manufacturers_content">
+			<div class="name_section">
+				<div style="margin-bottom:5px; padding-right: 16px; width: 10%;">
+					<select class="easyui-combobox" name="copyform" label="Entity Type" labelPosition="top" style="width: 100%;">
+						<option value="AL"></option>
+						<option value="AK">ISF-11</option>
+					</select>
+				</div>
+
+				<div style="margin-bottom:5px; padding-right: 16px; width: 30%;">
+					<input class="easyui-textbox" label="Name" labelPosition="top" data-options="validType:'text'" style="width: 100%;">
+				</div>
+
+				<div style="margin-bottom:5px; padding-right: 16px; width: 10%;">
+					<input class="easyui-textbox" label="DUNS/DUNS+4" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+				</div>
+	
+				<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+					<select class="easyui-combobox" name="secondarynametype" label="Secondary Name Type" labelPosition="top" style="width: 100%;">
+						<option value="AL"></option>
+						<option value="AK">ISF-11</option>
+						<option value="AZ">ISF-12</option>
+					</select>
+				</div>
+				<div style="margin-bottom:5px; width: 25%;">
+					<input class="easyui-textbox" label="Secondary name" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+				</div>
+			</div>
+
+			<div class="address_section">
+				<div style="width: 50%;">
+					<div class="addresspart_one">
+						<div style="margin-bottom:5px; margin-right: 24px; width: 50%;">
+							<select class="easyui-combobox" name="addresspart1" label="Address Part 1" labelPosition="top"  style="width: 100%;">
+								<option value="AL">Unstructured Street Address</option>
+								<option value="AK">ISF-11</option>
+								<option value="AZ">ISF-12</option>
+							</select>
+						</div>
+						<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+							<input class="easyui-textbox" label=" " labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+						</div>
+					</div>
+	
+					<div class="addresspart_two">
+						<div style="margin-bottom:5px; margin-right: 24px; width: 50%;">
+							<select class="easyui-combobox" name="addresspart2" label="Address Part 2" labelPosition="top" style="width: 100%;">
+								<option value="AL">Unstructured Street Address</option>
+								<option value="AK">ISF-11</option>
+								<option value="AZ">ISF-12</option>
+							</select>
+						</div>
+						<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+							<input class="easyui-textbox"  label=" " labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+						</div>
+					</div>
+				</div>
+	
+				<div style="width: 50%;">
+					<div class="country_state">
+						<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+							<input class="easyui-textbox" label="Country" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+						</div>
+						
+						<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+							<input class="easyui-textbox" label="Postal Code" labelPosition="top" data-options="validType:'number'"  style="width: 100%;">
+						</div>
+	
+						<div style="margin-bottom:5px; width: 30%;">
+							<input class="easyui-textbox" label="Email:" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+						</div>
+					</div>
+	
+					<div class="city_postal">
+						<div style="margin-bottom:5px; padding-right: 16px; width: 45%;">
+							<input class="easyui-textbox" label="City" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+						</div>
+	
+						<div style="margin-bottom:5px; padding-right: 16px; width: 25%;">
+							<input class="easyui-textbox" label="State/Province" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+						</div>
+	
+						<div class="add_address_btn_div" style="margin-bottom:5px; width: 30%;">
+							<button class="button add_address_btn"><i class="fa fa-plus add_icon"></i> Add Address Part</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</form>
+
+	<div class="bottom_line"></div>
+
+	<div class="save_btn_div">
+		<button class="button save_btn"><i class="fa fa-save save_icon"></i> &nbsp;&nbsp;Save Change</button>
+	</div>
+</div>
+
+<footer>
+	<p>2020 &copy; Skate</p>
+	<p><a href="#">Design & Develop by Themesbrand</a></p>
+</footer>
+</body>
+
+
+<script>
+	$(document).ready(function () {
+		var initSidebarWidth = $(".sidebar").width();
+		var initContentWidth = $(".content").width();
+		var initHeaderWidth = $(".header").width();
+		var initFooterWidth = $(".footer").width();
+		var initResolution = $(window).width();
+		if(initResolution > 1440) {
+			$("*").css('zoom', 1);	
+		}
+		else if(initResolution <= 1440 && initResolution > 1360) {
+			$("*").css('zoom', 0.99);	
+		}
+		else if(initResolution <= 1360 && initResolution > 1280) {
+			$("*").css('zoom', 0.98);	
+		}
+		else if(initResolution <= 1280 && initResolution > 1024) {
+			$("*").css('zoom', 0.98);	
+		}
+		else if(initResolution <= 1024) {
+			$("*").css('zoom', 0.97);	
+		}
+
+		$(window).resize(function(){
+			$(".sidebar").width(initSidebarWidth + "px");
+			$(".content").width(initContentWidth + "px");
+			$(".header").width(initHeaderWidth + "px");
+			$(".footer").width(initFooterWidth + "px");
+			$()
+		})
+		
+		$("#grid").kendoGrid({
+			dataSource: [
+			],
+			height: 'auto',
+			toolbar: ["create"],
+			columns: [
+				{ field:"partnumber",title:"Part No", width: "10%"},
+				{ field: "tariffnumber", title: "Tariff No", width: "10%" },
+				{ field: "countryoforigin", title:"Country of Origin", width: "10%" },
+				{ field: "invoiceqtv", title:"Invoice Qtv", width: "10%" },
+				{ field: "invoicevalue", title:"Invoice Value", width: "10%" },
+				{ field: "cenuqtv1", title:"Census Qtv_1", width: "10%" },
+				{ field: "cenuqtv2", title:"Census Qtv_2", width: "10%" },
+				{ command: "destroy", title: " ", width: "8%" }],
+			editable: true,
+		});
+
+		$(".r_submenu").click(function() {
+			$(".r_submenu").removeClass("active");
+			$(this).addClass("active")
+		})
+
+		// Get the modal
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	var btn1 = document.getElementById("add_btn1");
+	var btn2 = document.getElementById("add_btn2");
+	var btn3 = document.getElementById("add_btn3");
+
+	// Get the <span> element that closes the modal
+	var span1 = document.getElementsByClassName("close")[0];
+	var span2 = document.getElementsByClassName("close")[0];
+	var span3 = document.getElementsByClassName("close")[0];
+
+	// When the user clicks the button, open the modal 
+	btn1.onclick = function() {
+		modal.style.display = "block";
+	}
+	btn2.onclick = function() {
+		modal.style.display = "block";
+	}
+	btn3.onclick = function() {
+		modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span1.onclick = function() {
+		modal.style.display = "none";
+	}
+	span2.onclick = function() {
+		modal.style.display = "none";
+	}
+	span3.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
+	}
+
+	});
+
+</script>
+</html>

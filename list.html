@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.9.5/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.9.5/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.9.5/demo/demo.css">
+<link href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.common.min.css" rel="stylesheet" />
+<link href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.default.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css">
+
+<script type="text/javascript" src="jquery-easyui-1.9.5/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.9.5/jquery.easyui.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2020.2.513/js/kendo.all.min.js"></script>
+<script src="./js/list.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+	<h2 style="color: #F3F7FA"> Spider CHB</h2>
+	<a class="active" href="#home"> <i class="fa fa-home nav_icon" aria-hidden="true"></i> Home</a>
+	<a href="#news"> <i class="fa fa-users nav_icon"></i> Users</a>
+	<a href="#contact"> <i class="fa fa-envelope nav_icon"></i> Contact</a>
+	<a href="#about"> <i class="fa fa-user-circle-o nav_icon"></i> About</a>
+</div>
+<header class="header_list">
+   <div class="right-header-section">
+	   <div class="r_submenu active">
+			<a href="#">Dashboard</a>
+		</div>
+		<div class="r_submenu">
+			<a href="#">Help</a>
+		</div>
+    <img src="image/gavatar.png" alt="">
+   </div>
+</header>
+<div class="content_list">
+	<div class="btn-group">
+		<button>Search</button>
+		<button>Export Excel</button>
+	</div>
+
+	<div class="isfentry_list_header">
+		<h3>ISF Entries</h3>
+	</div>
+
+	<div class="search_form">
+		<div class="sub_header" style="border-bottom: 1px solid #aaa; padding-bottom: 2px;">
+			<div style="width: 50%;"><h3>Search By</h3></div>
+		</div>
+
+		<div class="form_body" style="display: flex; flex-direction: row;">
+			<div class="first_section">
+				<div style="margin-bottom:5px; width: 100%;  padding-right: 16px; ">
+					<input class="easyui-textbox" label="Rerference No." labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+				</div>
+				<div style="margin-bottom:5px; width: 100%;  padding-right: 16px; ">
+					<input class="easyui-textbox" label="ISF Number" labelPosition="top" data-options="validType:'text'" style="width: 100%;">
+				</div>
+				<div style="margin-bottom:5px; width: 100%; padding-right: 16px; white-space: nowrap;">
+					<input class="easyui-textbox" label="Importer" labelPosition="top" data-options="validType:'text'" buttonText="Search"  style="width: 100%;">
+					<div class="importer-radio" style="width: 80%; padding-top: 4px; margin-left: 24px;">
+						<input class="easyui-radiobutton" name="profilename" value="profilename" checked label="Profile Name" labelPosition="after" style="margin-right: 30px;">
+						<input class="easyui-radiobutton" name="profilename" value="profilename" label="Company Name" labelPosition="after">
+					</div>
+				</div>
+			</div>
+	
+			<div class="second_section">
+				<div  style="display: flex; flex-direction: row;">
+					<div style="margin-bottom:5px;padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox" label="Carrier" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox" label="container No." labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+
+				<div  style="display: flex; flex-direction: row;">
+					<div style="margin-bottom:5px;padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox" label="Master Bill" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox" label="House Bill" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+
+				<div style="display: flex; flex-direction: row;">
+					<div style="margin-bottom:5px;padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox" label="Party Name" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 50%;">
+						<input class="easyui-textbox" label="Party ID" labelPosition="top" data-options="validType:'text'"  style="width: 100%;">
+					</div>
+				</div>
+			</div>
+		
+			<div class="third_section">
+				<div style="display: flex; flex-direction: row;">
+					<div style="margin-bottom:5px;padding-right: 16px; width: 30%;">
+						<select class="easyui-combobox" name="isfcomplete" label="ISF Complete" labelPosition="top"  style="width: 100%;">
+							<option value="AL"></option>
+							<option value="AK">ISF-11</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 70%;">
+						<select class="easyui-combobox" name="location" label="Location" labelPosition="top"  style="width: 100%;">
+							<option value="AL">Location</option>
+							<option value="AK">ISF-11</option>
+						</select>
+					</div>
+				</div>
+
+				<div style="display: flex; flex-direction: row;">
+					<div style="margin-bottom:5px;padding-right: 16px; width: 30%;">
+						<select class="easyui-combobox" name="billonfile" label="Bill On File" labelPosition="top"  style="width: 100%;">
+							<option value="AL"></option>
+							<option value="AK">ISF-11</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 70%;">
+						<select class="easyui-combobox" name="user" label="User" labelPosition="top" style="width: 100%;">
+							<option value="AL">UserName</option>
+							<option value="AK">ISF-11</option>
+						</select>
+					</div>
+				</div>
+
+				<div style="display: flex; flex-direction: row;">
+					<div style="margin-bottom:5px;padding-right: 16px; width: 30%;">
+						<select class="easyui-combobox" name="statuscolor" label="Status Color" labelPosition="top" style="width: 100%;">
+							<option value="AL"></option>
+							<option value="AK">ISF-11</option>
+						</select>
+					</div>
+					<div style="margin-bottom:5px; padding-right: 16px; width: 70%;">
+						<select class="easyui-combobox" name="customsstatus" label="Customs Status" labelPosition="top" style="width: 100%;">
+							<option value="AL"></option>
+							<option value="AK">ISF-11</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="forth_section">
+				<div style="display: flex; flex-direction: row;">
+					<span style="margin-top: 38px; margin-right: 2px;">ETL beteen:</span>
+					<div style="margin-bottom:5px; margin-right: 12px; width: 40%;">
+						<input class="easyui-datebox" label="Begin Date:" labelPosition="top" style="width:100%;">
+					</div>
+					<div style="margin-bottom:5px; width: 40%;">
+						<input class="easyui-datebox" label="End Date:" labelPosition="top" style="width:100%;">
+					</div>
+				</div>
+	
+				<div style="display: flex; flex-direction: row;">
+					<span style="margin-top: 38px; margin-right: 2px">ETA beteen:</span>
+					<div style="margin-bottom:5px; margin-right: 12px; width: 40%;">
+						<input class="easyui-datebox" label="Begin Date:" labelPosition="top" style="width:100%;">
+					</div>
+					<div style="margin-bottom:5px; width: 40%;">
+						<input class="easyui-datebox" label="End Date:" labelPosition="top" style="width:100%;">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+	</div>
+
+	<div class="kendo_list">
+		<div class="kendo_grid_section">
+			<div id="grid_list">
+
+			</div>
+		</div>
+	</div>
+
+	</form>
+	<div class="bottom_line" style="margin-bottom: 200px;"></div>
+
+</div>
+<footer>
+	<p>2020 &copy; Skate</p>
+	<p><a href="#">Design & Develop by Themesbrand</a></p>
+</footer>
+</body>
+
+<script>
+	$(document).ready(function () {
+		var initSidebarWidth = $(".sidebar").width();
+		var initContentWidth = $(".content_list").width();
+		var initHeaderWidth = $(".header_list").width();
+		var initFooterWidth = $(".footer").width();
+		var initResolution = $(window).width();
+
+		if(initResolution > 1440) {
+			$("*").css('zoom', 1);	
+		}
+		else if(initResolution <= 1440 && initResolution > 1360) {
+			$("*").css('zoom', 0.99);	
+		}
+		else if(initResolution <= 1360 && initResolution > 1280) {
+			$("*").css('zoom', 0.98);	
+		}
+		else if(initResolution <= 1280 && initResolution > 1024) {
+			$("*").css('zoom', 0.96);	
+		}
+		else if(initResolution <= 1024) {
+			$("*").css('zoom', 0.93);	
+		}
+
+		$(window).resize(function(){
+			console.log(initContentWidth);
+			$(".sidebar").width(initSidebarWidth + "px");
+			$(".content_list").width(initContentWidth + "px");
+			$(".header_list").width(initHeaderWidth + "px");
+			$(".footer").width(initFooterWidth + "px");
+		})
+		
+		$("#grid_list").kendoGrid({
+			dataSource: {
+				data: lists,
+				schema: {
+					model: {
+						fields: {
+							referencenum: { type: "number" },
+							isfnum: { type: "string" },
+							importer: { type: "string" },
+							etl: { type: "string" },
+							eta: { type: "string" },
+							carrier: { type: "string" },
+							masterbill: { type: "string" },
+							housebill: { type: "string" },
+							transactiontype: { type: "string" },
+							createdtime: { type: "string" },
+							isfcompleted: { type: "string" },
+							billonfile: { type: "string" },
+							customstatus: { type: "string" }
+						}
+					}
+				},
+				pageSize: 20
+			},
+			height: 'auto',
+			scrollable: true,
+			pageable: {
+				input: true,
+				numeric: false
+			},
+			columns: [
+				{ field:"referencenum",title:"Reference No.", width: "10%"},
+				{ field: "isfnum", title: "ISF Number", width: "10%" },
+				{ field: "importer", title:"Importer", format: "{0:c}", width: "10%" },
+				{ field: "etl", title:"ETL", format: "{0:c}", width: "6%" },
+				{ field: "eta", title:"ETA", format: "{0:c}", width: "6%" },
+				{ field: "carrier", title:"Carrier", format: "{0:c}", width: "7%" },
+				{ field: "masterbill", title:"Master Bill", format: "{0:c}", width: "10%" },
+				{ field: "housebill", title:"House/Straight Bill", format: "{0:c}", width: "10%" },
+				{ field: "transactiontype", title:"Transaction Type", format: "{0:c}", width: "10%" },
+				{ field: "createdtime", title:"Create Time", format: "{0:c}", width: "10%" },
+				{ field: "isfcompleted", title:"ISF Complete", format: "{0:c}", width: "10%" },
+				{ field: "billonfile", title:"Bill On File", format: "{0:c}", width: "7%" },
+				{ field: "customstatus", title:"Customs Status", format: "{0:c}", width: "10%" },
+			],
+		});
+
+		$("#grid_list tr:even").css("background-color", "#F5F7F8");
+		$("#grid_list tr:odd").css("background-color", "rgb(231, 233, 235)");
+
+		$(".r_submenu").click(function() {
+			$(".r_submenu").removeClass("active");
+			$(this).addClass("active")
+		})
+	});
+
+</script>
+</html>
